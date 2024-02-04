@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Values Common Test</title>
+    <link rel="icon" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <script src="vc.txt"></script>
+    <script src="vcparse.js"></script>
+    <script>
+document.head.title = title
+document.body.innerHTML = `
+<h1>${title}</h1>
+<hr/>
+<h2 style="text-align: center">Instructions</h2>
+<p class="question">You will be presented with a series of statements. For each one, click the button with your opinion on it.</p>
+<button class="button" onclick="location.href='quiz.html'" id="quizButton">Got it!</button>
+<br/>
+<button class="button disagree" onclick="location.href='index.html'" id="backButton">Wait, nevermind!</button>
+<br/>`
+    </script>
+  </body>
+</html>

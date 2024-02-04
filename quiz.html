@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Values Common Test</title>
+    <link rel="icon" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <script src="vc.txt"></script>
+    <script src="vcparse.js"></script>
+    <script>
+document.head.title = title
+
+let quizButtonHtml = ""
+for (const b of buttons) {quizButtonHtml += `<button class="button" style="background-color:${b.c};" onMouseOver="this.style.backgroundColor='${b.f}'" onMouseOut="this.style.backgroundColor='${b.c}'">${b.n}</button><br />`}
+
+document.body.innerHTML = `<h1>${title}</h1><hr /><h2 style="text-align: center" id="questionNumber">Loading...</h2><p class="question" id="questionText"></p>${quizButtonHtml}<button class="small_button" id="backQButton">Back</button>`
+
+let maxVals = {}
+
+for (const axis of axes) {
+	maxVals[axis.n] = 0
+}
+
+for(const q of questions) {
+	for(const a of axes) {
+	  let h=0
+	  for(const b of buttons) {h = Math.max(h, (q.e[a.n]??0) * b.m)}
+      maxVals[a.n]+=h
+	}
+}
+
+let questionIndex = 0
+let questionNumber, questionText
+let effects = []
+
+function initQuestion() {
+	questionNumber.innerText = `Question ${questionIndex + 1} of ${
+		questions.length
+	}`
+
+	questionText.innerText = questions[questionIndex].q
+}
+
+function prevQuestion() {
+	if (questionIndex > 0) {
+		questionIndex--
+		initQuestion()
+	} else {
+		changePage(Page.index)
+	}
+}
+
+function nextQuestion(buttonIndex) {
+	effects[questionIndex] = {}
+	for (const axis of axes) {
+		effects[questionIndex][axis.n] = (questions[questionIndex].e[axis.n]??0) * buttons[buttonIndex].m
+	}
+	questionIndex++
+	initQuestion()
+}
+
+function showResults() {
+	let finalEffects = effects[0]
+
+	for(const axis of axes) {
+		finalEffects[axis.n] = effects.map((item) => {return item[axis.n]}).reduce((a, b) => a + b, 0)
+	}
+
+	let score = finalEffects
+
+	for (const key in finalEffects) {
+		score[key] = (finalEffects[key] + maxVals[key]) / ((maxVals[key] + maxVals[key]) * 0.01)
+	}
+	
+	location.href=`results.html?${Object.values(score).map((item) => item.toFixed(1)).join(",")}`;
+}
+
+let buttonElements = document.getElementsByClassName("button")
+
+for (let i = 0; i < buttonElements.length; i++) {
+	buttonElements[i].addEventListener("click", () => {
+		if (questionIndex + 1 < questions.length) {
+			nextQuestion(i)
+		} else {
+			effects[questionIndex] = {}
+			for (const axis of axes) {
+				effects[questionIndex][axis.n] = (questions[questionIndex].e[axis.n]??0) * buttons[i].m
+			}
+			questionIndex++
+			showResults()
+		}
+	})
+}
+
+document.getElementById("backQButton").addEventListener("click", prevQuestion)
+
+questionNumber = document.getElementById("questionNumber")
+questionText = document.getElementById("questionText")
+
+initQuestion()  
+    </script>
+  </body>
+</html>

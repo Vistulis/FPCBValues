@@ -1,0 +1,288 @@
+data=`
+
+// lines starting with "//" are comments (they have no effect)
+// empty lines have no effect as well
+
+// title
+FPCBValues
+// version
+1.0.0
+// repository (optional)
+https://github.com/8values/8values.github.io
+
+Description:
+
+<h2>What is FPCBValues?</h2>
+<p>FPCBValues (or Free Polcompball Values) is a test made to determine your alignment to values which relate to FPCB.</p>
+<h2><a>What are the values?</a></h2>
+<p>They are:</p>
+
+Axes:
+
+// [name]
+// [left.name]
+// [left.desc]
+// [left.img]
+// [left.colour]
+// [right.name]
+// [right.desc]
+// [right.img]
+// [right.colour]
+// =[tier]
+
+Admin
+
+Moderation
+Those with higher Equality scores believe the economy should distribute value evenly among the populace. They tend to support progressive tax codes, social programs, and at high values, socialism.
+moderation.svg
+#333333
+
+Permission
+Those with higher Market scores believe the economy should be focused on rapid growth. They tend to support lower taxes, privatization, deregulation, and at high values, laissez-faire capitalism.
+permission.svg
+#EEFFAA
+
+=Totalitarian
+=Authoritarian
+=Protective
+=Status Quo
+=Liberty
+=Anarchist
+=Spam Bot
+
+Status
+
+Legacy
+Those with higher Globe scores are cosmopolitan and globalist. They often believe in a peaceful foreign policy, emphasizing diplomacy, cooperation, integration, and at high values, a world government.
+legacy.svg
+#00378cff
+
+Identity
+Those with higher Nation scores are patriotic and nationalist. They often believe in an aggressive foreign policy, valuing the military, strength, sovereignty, and at high values, territorial expansion.
+identity.svg
+#676C53
+
+=Continuation
+=Similar
+=Balanced
+=Different
+=Identitarian
+
+Opposition
+
+Grudge
+Those with higher Liberty scores believe in strong civil liberties. They tend to support democracy and oppose state intervention in personal lives. Note that this refers to civil liberties, not economic liberties.
+grudge.svg
+#501616
+
+Apathy
+Those with higher Authority scores believe in strong state power. They tend to support state intervention in personal lives, government surveillance, and at high values, censorship or autocracy.
+apathy.svg
+#F4D7D7
+
+=Revanchist
+=Aggrivated
+=Loyalist
+=Mixed
+=Fence Sitter
+=Detentists
+=Reunificationist
+
+Style
+
+Serious
+Those with higher Progress scores believe in social change and rationality. Though not always, they are usually secular or atheist, and support environmental action and scientific or technological research.
+serious.svg
+#D38D5F
+
+Silly
+Those with higher Tradition scores believe in traditional values and strict adherence to a moral code. Though not always, they are usually religious, and support the status quo or the status quo ante.
+silly.svg
+#00FF00
+
+=Scholarly
+=Serious
+=Balanced
+=Comedic
+=Larp Ping
+=Matadorian
+
+Buttons:
+
+// [name]
+// [modifier]
+// [colour]
+// [focused colour]
+
+Strongly Agree
+1
+#1b5e20
+#154a19
+
+Agree
+0.5
+#4caf50
+#29942e
+
+Neutral/Unsure
+0
+#949494
+#656565
+
+Disagree
+-0.5
+#f44336
+#d6271a
+
+Strongly Disagree
+-1
+#b71c1c
+#a00e0e
+
+Ideologies:
+
+// [name]
+// [value] [axis]
+
+Hardline Borkerian Model
+70 Admin
+60 Status
+80 Opposition
+50 Style
+
+Bernhe-DPRK Model
+60 Admin
+30 Status
+20 Opposition
+30 Style
+
+Classical Revolutionary Council Model
+30 Admin
+70 Status
+75 Opposition
+50 Style
+
+Centrist
+50 Admin
+50 Status
+50 Opposition
+50 Style
+
+Killer Kitty "Reformism"
+20 Admin
+40 Status
+30 Opposition
+80 Style
+
+Kultokrat Model
+10 Admin
+70 Status
+40 Opposition
+20 Style
+
+Kevin/PCB Reddit model
+80 Admin
+50 Status
+20 Opposition
+70 Style
+
+Vistula's Borkerian Union Idea
+30 Admin
+65 Status
+85 Opposition
+30 Style
+
+Questions:
+
+// [question]
+// +/-[points] [axis]
+// 
+// the results then are the percentage of points gained out of the possible amount of points
+
+FPCB should stay in constant opposition to PCB.
++10 Opposition
+
+Banning users from the wiki is completely unjust.
+-5 Admin
+
+FPCB is a direct continuation of PCB rather than something completely different.
++10 Status
+
+I use FCPB for fun rather than real political or economic discussion.
+-5 Style
+
+Reading theory is a usual pass-time for me.
++6 Style
+
+Even banning the spam bots is unfair.
+-10 Admin
+
+People who do not take FPCB's political aspect seriously should just leave.
++10 Style
+
+The Revolutionary Council is doing a good job, but borker shouldn't be owner.
+-7 Admin
+-3 Opposition
++5 Style
+
+Serbian Socialist was right in asking for the word "commie" to be banned.
++8 Admin
++5 Style
+
+The Kevin sponsored PCB-FPCB negotiations were a step in the right direction.
+-5 Opposition
+
+PCB and FPCB should unify together in collective rule between the two.
+-10 Opposition
+
+PCB and FPCB should unify together under Borker and the Revolutionary Council's rule.
++5 Opposition
+
+Griefing pages in jokey ways should be allowed.
+-5 Admin
+
+The !Luis and similar commands for reaction images are a good addition to the server, and have been proven to not clog up chat
+-5 Style
+
+BERNHE's tenure as foreign minister was better than Jefbols
+-5 Opposition
+
+FPCB is as the name states Free PCB, we are the successor to the old rotten wiki.
++5 Status
+
+The block button exists, 'toxic' or annoying members can be just ignored rather than having them be banned
+-10 Admin
+
+Tests like this one are stupid and meaningless and so should be combatted.
++7 Style
+
+People saying "trve" instead of "true" annoys me extremely and so we should enforce autocorrect.
++7 Style
+
+The "cold war" is caused by the PCB council, we just wanted to do our own thing and they have done their best to hinder us at every step.
+-7 Status
++2 Opposition
+
+The eventual end goal is to get PCB to capitulate and let the community be reunited.
++3 Status
+
+Any attempts to at negotiation with PCB are and have proven to be futile.
+-3 Status
++2 PCBA
+
+Moderation needs to be increased to deal with problems like spam bots and griefing.
++6 Admin
+
+The source documents section of FPCB is a move in the right direction, giving FPCB a more serious aspect.
++5 Style
+
+We should have more polls like the poll on whether to add Source Documents.
+-5 Admin
+
+Neither the Revolutionary Council nor Borker should have any authority - all should be equal.
+-8 Admin
+
+Things without major impact but effort put into it like messardist council and Luis Miguel fan club are good for the community.
+-5 Style
+-5 Status
+`
